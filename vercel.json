@@ -1,0 +1,8 @@
+{
+  "buildCommand": "cd LinhasDaMenina && npm run build",
+  "outputDirectory": "LinhasDaMenina/dist",
+  "installCommand": "cd LinhasDaMenina && npm install",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

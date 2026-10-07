@@ -1,9 +1,5 @@
-import { useState } from 'react'
-import type { FormEvent } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import SignIn1 from '../components/ui/modern-stunning-sign-in'
 
 export default function Login() {
-  const [email, setEmail] = useState(''); const [password, setPassword] = useState(''); const [register, setRegister] = useState(false); const [error, setError] = useState(''); const navigate = useNavigate()
-  async function submit(event: FormEvent) { event.preventDefault(); setError(''); const response = await fetch(`/api/auth/${register ? 'register' : 'login'}`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'include', body: JSON.stringify({ email, password }) }); const data = await response.json(); if (!response.ok) return setError(data.error || 'Não foi possível entrar.'); navigate('/checkout') }
-  return <section className="max-w-md mx-auto px-6 py-16"><h1 className="font-titulo text-5xl text-ouro">{register ? 'Criar conta' : 'Entrar'}</h1><form onSubmit={submit} className="mt-10 space-y-5"><input required type="email" placeholder="E-mail" value={email} onChange={e => setEmail(e.target.value)} className="w-full bg-transparent border border-ouro/30 p-3 text-creme" /><input required minLength={8} type="password" placeholder="Senha (mínimo 8 caracteres)" value={password} onChange={e => setPassword(e.target.value)} className="w-full bg-transparent border border-ouro/30 p-3 text-creme" />{error && <p className="text-sangue">{error}</p>}<button className="w-full bg-ouro text-preto py-3 font-label uppercase tracking-widest">{register ? 'Cadastrar' : 'Entrar'}</button></form><button onClick={() => setRegister(!register)} className="mt-6 text-bege underline">{register ? 'Já tenho uma conta' : 'Ainda não tenho conta'}</button><p className="mt-8"><Link to="/carrinho" className="text-ouro">Voltar ao carrinho</Link></p></section>
+  return <SignIn1 />
 }
