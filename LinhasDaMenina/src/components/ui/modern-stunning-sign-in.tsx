@@ -33,8 +33,7 @@ export function SignIn1() {
     <div className="pointer-events-none absolute left-1/2 top-1/2 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-vinho/35 blur-3xl" />
     <section className="relative z-10 w-full max-w-[29rem] rounded-[2rem] border border-ouro/20 bg-[#16090b]/90 p-1 shadow-2xl shadow-black/50 backdrop-blur-xl">
       <div className="rounded-[1.75rem] border border-white/5 px-6 py-7 sm:px-9 sm:py-9">
-        <h1 className="font-titulo text-4xl font-semibold text-creme">{register && personalData ? 'Seus dados pessoais' : register ? 'Registrar' : 'Login'}</h1>
-        <div className="mt-3 text-base text-bege">{register && personalData ? 'Complete seus dados pessoais para finalizar seu cadastro.' : register ? 'Crie sua conta para acompanhar pedidos e receber novidades.' : 'Entre na sua conta para continuar sua experiência na Linha da Menina.'}</div>
+        <h1 className="text-center font-titulo text-4xl font-semibold text-creme">{register && personalData ? 'Seus dados pessoais' : register ? 'Registrar' : 'Login'}</h1>
         <div className="mt-7 grid grid-cols-2 rounded-xl border border-ouro/15 bg-black/20 p-1" role="tablist" aria-label="Acesso à conta">
           <button type="button" role="tab" aria-selected={!register} onClick={() => changeMode(false)} className={`rounded-lg px-3 py-2.5 font-label text-xs uppercase tracking-widest transition ${!register ? 'bg-ouro text-preto shadow-md' : 'text-bege hover:text-creme'}`}>Entrar</button>
           <button type="button" role="tab" aria-selected={register} onClick={() => changeMode(true)} className={`rounded-lg px-3 py-2.5 font-label text-xs uppercase tracking-widest transition ${register ? 'bg-ouro text-preto shadow-md' : 'text-bege hover:text-creme'}`}>Criar conta</button>
