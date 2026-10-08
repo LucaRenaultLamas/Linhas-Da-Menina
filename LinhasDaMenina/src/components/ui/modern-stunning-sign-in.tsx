@@ -33,14 +33,13 @@ export function SignIn1() {
     <div className="pointer-events-none absolute left-1/2 top-1/2 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-vinho/35 blur-3xl" />
     <section className="relative z-10 w-full max-w-[29rem] rounded-[2rem] border border-ouro/20 bg-[#16090b]/90 p-1 shadow-2xl shadow-black/50 backdrop-blur-xl">
       <div className="rounded-[1.75rem] border border-white/5 px-6 py-7 sm:px-9 sm:py-9">
-        <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-full border border-ouro/40 bg-gradient-to-br from-ouro/25 to-sangue/20 text-3xl text-ouro shadow-lg shadow-ouro/10">✦</div>
-        <div className="grid grid-cols-2 rounded-xl border border-ouro/15 bg-black/20 p-1" role="tablist" aria-label="Acesso à conta">
+        <h1 className="font-titulo text-4xl font-semibold text-creme">{register && personalData ? 'Seus dados pessoais' : register ? 'Registrar' : 'Login'}</h1>
+        <div className="mt-3 text-base text-bege">{register && personalData ? 'Complete seus dados pessoais para finalizar seu cadastro.' : register ? 'Crie sua conta para acompanhar pedidos e receber novidades.' : 'Entre na sua conta para continuar sua experiência na Linha da Menina.'}</div>
+        <div className="mt-7 grid grid-cols-2 rounded-xl border border-ouro/15 bg-black/20 p-1" role="tablist" aria-label="Acesso à conta">
           <button type="button" role="tab" aria-selected={!register} onClick={() => changeMode(false)} className={`rounded-lg px-3 py-2.5 font-label text-xs uppercase tracking-widest transition ${!register ? 'bg-ouro text-preto shadow-md' : 'text-bege hover:text-creme'}`}>Entrar</button>
           <button type="button" role="tab" aria-selected={register} onClick={() => changeMode(true)} className={`rounded-lg px-3 py-2.5 font-label text-xs uppercase tracking-widest transition ${register ? 'bg-ouro text-preto shadow-md' : 'text-bege hover:text-creme'}`}>Criar conta</button>
         </div>
 
-        <h1 className="mt-7 font-titulo text-4xl font-semibold text-creme">{register && personalData ? 'Seus dados pessoais' : register ? 'Registrar' : 'Login'}</h1>
-        <div className="mt-7 text-base text-bege">{register && personalData ? 'Complete seus dados pessoais para finalizar seu cadastro.' : register ? 'Crie sua conta para acompanhar pedidos e receber novidades.' : 'Entre na sua conta para continuar sua experiência na Linha da Menina.'}</div>
         <form onSubmit={handleSubmit} className="mt-7 space-y-5">
           {register && personalData ? <>
             <label className="block"><span className="mb-2 block font-label text-xs uppercase tracking-wider text-champanhe/80">Nome completo</span><input required autoFocus value={name} onChange={e => setName(e.target.value)} placeholder="Como podemos chamar você?" className="w-full rounded-xl border border-ouro/20 bg-black/20 px-4 py-3.5 text-creme placeholder-bege/60 outline-none transition focus:border-ouro focus:ring-2 focus:ring-ouro/15" /></label>
