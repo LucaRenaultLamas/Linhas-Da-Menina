@@ -51,7 +51,6 @@ export function SignIn1() {
           <button disabled={loading} className="w-full rounded-xl bg-gradient-to-r from-ouro to-champanhe px-5 py-3.5 font-label text-xs font-semibold uppercase tracking-[0.2em] text-preto shadow-lg shadow-ouro/10 transition hover:brightness-110 disabled:opacity-60">{loading ? 'Aguarde...' : register && !personalData ? 'Continuar' : register ? 'Concluir cadastro' : 'Entrar na conta'}</button>
         </form>
         {register && personalData && <button type="button" onClick={() => setPersonalData(false)} className="mt-5 w-full text-center text-sm text-bege underline underline-offset-4 hover:text-creme">Voltar aos dados de acesso</button>}
-        {!personalData && <p className="mt-7 text-center text-sm text-bege">{register ? 'Já possui uma conta?' : 'Ainda não possui uma conta?'} <button type="button" onClick={() => changeMode(!register)} className="text-champanhe underline underline-offset-4 hover:text-ouro">{register ? 'Entrar' : 'Criar agora'}</button></p>}
         <p className="mt-7 text-center text-sm"><Link to="/carrinho" className="text-ouro hover:text-champanhe">← Voltar ao carrinho</Link></p>
       </div>
     </section>
