@@ -39,6 +39,7 @@ export function SignIn1() {
           <button type="button" role="tab" aria-selected={register} onClick={() => changeMode(true)} className={`rounded-lg px-3 py-2.5 font-label text-xs uppercase tracking-widest transition ${register ? 'bg-ouro text-preto shadow-md' : 'text-bege hover:text-creme'}`}>Criar conta</button>
         </div>
 
+        <h1 className="mt-7 font-titulo text-4xl font-semibold text-creme">{register && personalData ? 'Seus dados pessoais' : register ? 'Sua jornada começa aqui' : 'Que bom ter você de volta'}</h1>
         <div className="mt-7 text-base text-bege">{register && personalData ? 'Complete seus dados pessoais para finalizar seu cadastro.' : register ? 'Crie sua conta para acompanhar pedidos e receber novidades.' : 'Entre na sua conta para continuar sua experiência na Linha da Menina.'}</div>
         <form onSubmit={handleSubmit} className="mt-7 space-y-5">
           {register && personalData ? <>
