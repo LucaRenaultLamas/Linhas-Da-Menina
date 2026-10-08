@@ -3,6 +3,7 @@ import Footer from './Footer'
 import BotaoWhatsApp from './BotaoWhatsApp'
 import ScrollToTop from './ScrollToTop'
 import RouteTransition from './RouteTransition'
+import CarrinhoDrawer from './CarrinhoDrawer'
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
       <main><RouteTransition /></main>
       <Footer />
       <BotaoWhatsApp />
+      <CarrinhoDrawer />
     </>
   )
 }

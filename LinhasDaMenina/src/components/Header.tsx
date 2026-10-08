@@ -14,7 +14,7 @@ const links = [
 
 export default function Header() {
   const [aberto, setAberto] = useState(false)
-  const { itens } = useCarrinhoContext()
+  const { itens, abrirCarrinho } = useCarrinhoContext()
 
   const classeLink = ({ isActive }: { isActive: boolean }) =>
     `font-label text-xs uppercase tracking-[0.2em] transition-colors hover:text-ouro ${
@@ -36,7 +36,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4"><Link to="/login" className="text-ouro" aria-label="Login"><UserRound size={20} /></Link><Link to="/carrinho" className="relative text-ouro" aria-label="Carrinho"><ShoppingBag size={22} />{itens.length > 0 && <span className="absolute -right-2 -top-2 rounded-full bg-sangue text-creme text-[10px] w-4 h-4 text-center">{itens.reduce((n, i) => n + i.quantidade, 0)}</span>}</Link><button
+        <div className="flex items-center gap-4"><Link to="/login" className="text-ouro" aria-label="Login"><UserRound size={20} /></Link><button type="button" onClick={abrirCarrinho} className="relative text-ouro" aria-label="Abrir carrinho"><ShoppingBag size={22} />{itens.length > 0 && <span className="absolute -right-2 -top-2 rounded-full bg-sangue text-creme text-[10px] w-4 h-4 text-center">{itens.reduce((n, i) => n + i.quantidade, 0)}</span>}</button><button
           type="button"
           className="md:hidden text-ouro cursor-pointer"
           onClick={() => setAberto(!aberto)}
