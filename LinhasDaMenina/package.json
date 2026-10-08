@@ -16,6 +16,7 @@
     "@fontsource/cormorant-garamond": "^5.2.5",
     "@fontsource/montserrat": "^5.2.5",
     "@fontsource/pinyon-script": "^5.2.5",
+    "@supabase/supabase-js": "^2.117.3",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.6.1",
