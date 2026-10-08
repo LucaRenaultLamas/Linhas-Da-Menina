@@ -77,6 +77,9 @@
 #root { min-height: 100svh; }
 
 body { margin: 0; min-width: 320px; background: #0B0506; color: #F1E6D2; font-family: "Cormorant Garamond", serif; }
+.route-transition { animation: route-enter 380ms ease both; }
+@keyframes route-enter { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .route-transition { animation: none; } }
 button, a { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 2px solid #E4CFA0; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
